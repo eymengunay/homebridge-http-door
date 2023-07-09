@@ -9,3 +9,24 @@
 > This is a work in progress.
 
 [WIP] A simple homebridge plugin for controlling (stateless) doors via HTTP requests.
+
+## Configuration sample
+
+```
+{
+    "accessories": [
+        {
+            "accessory": "HTTPDoor",
+            "name": "Building Door",
+            "type": "lock",
+            "url": "http://example.com/unlock"
+        },
+        {
+            "accessory": "HTTPDoor",
+            "name": "Garage Door",
+            "type": "garage",
+            "url": "http://example.com/unlock"
+        }
+    ]
+}
+```
