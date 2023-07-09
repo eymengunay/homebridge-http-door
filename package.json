@@ -1,7 +1,7 @@
 {
-  "name": "@eymengunay/homebridge-http-lock-mechanism",
-  "version": "0.1.0",
-  "description": "A simple homebridge plugin for controlling (stateless) lock mechanisms via HTTP requests.",
+  "name": "@eymengunay/homebridge-http-door",
+  "version": "0.2.0",
+  "description": "A simple homebridge plugin for controlling (stateless) doors via HTTP requests.",
   "main": "index.js",
   "type": "module",
   "scripts": {

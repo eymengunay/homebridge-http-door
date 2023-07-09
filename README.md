@@ -4,8 +4,8 @@
   </a>
 </p>
 
-# Homebridge HTTP Lock Mechanism
+# Homebridge HTTP Door
 
 > This is a work in progress.
 
-[WIP] A simple homebridge plugin for controlling (stateless) lock mechanisms via HTTP requests.
+[WIP] A simple homebridge plugin for controlling (stateless) doors via HTTP requests.
