@@ -56,6 +56,7 @@ class HTTPDoor {
     }).catch(err => {
       this.log.warn('HTTP request failed', err.message)
       this.updateState(new Error('HTTP request failed'))
+      this.autoLock()
       callback(err)
     })
   }
