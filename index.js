@@ -44,6 +44,7 @@ class HTTPDoor {
     }
   }
   handleSetState (value, callback) {
+    if (this.config.type === 'garage') this.updateState(2)
     return axios({
       method: this.config.method,
       url: this.config.url
