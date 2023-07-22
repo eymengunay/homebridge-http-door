@@ -34,17 +34,17 @@ class HTTPDoor {
       this.updateState(1)
     }, this.config.autoLockTimeout)
   }
-  updateState (state) {
+  updateState (currentState, targetState = null) {
     if (this.config.type === 'lock') {
-      this.service.getCharacteristic(this.Characteristic.LockCurrentState).updateValue(state)
-      this.service.getCharacteristic(this.Characteristic.LockTargetState).updateValue(state)
+      this.service.getCharacteristic(this.Characteristic.LockCurrentState).updateValue(currentState)
+      this.service.getCharacteristic(this.Characteristic.LockTargetState).updateValue(targetState === null ? currentState : targetState)
     } else if (this.config.type === 'garage') {
-      this.service.getCharacteristic(this.Characteristic.CurrentDoorState).updateValue(state)
-      this.service.getCharacteristic(this.Characteristic.TargetDoorState).updateValue(state)
+      this.service.getCharacteristic(this.Characteristic.CurrentDoorState).updateValue(currentState)
+      this.service.getCharacteristic(this.Characteristic.TargetDoorState).updateValue(targetState === null ? currentState : targetState)
     }
   }
   handleSetState (value, callback) {
-    if (this.config.type === 'garage') this.updateState(2)
+    if (this.config.type === 'garage') this.updateState(2, 0)
     return axios({
       method: this.config.method,
       url: this.config.url
